@@ -11,7 +11,7 @@ namespace GSMElectronicNB
         {
             InitializeComponent();
 
-            MainPage = new SmsPage();
+            MainPage = new sLoginPage();
         }
 
         protected override void OnStart()

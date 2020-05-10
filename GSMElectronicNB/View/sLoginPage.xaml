@@ -4,12 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="GSMElectronicNB.View.SmsPage">
+             x:Class="GSMElectronicNB.View.sLoginPage">
     <ContentPage.Content>
         <StackLayout>
-            <!--<Entry Text=""  Placeholder="Phone Number" x:Name="EntryNumber"/>-->
-            <Entry Text=""  Placeholder="Message" x:Name="EntryMessage"/>
-            <Button Text="Save/Sync Message" Clicked="BtnSendSms"/>
+            <Entry Text=""  Placeholder="Name" x:Name="EntryName"/>
+            <Entry Text=""  Placeholder="Password" x:Name="EntryPassword"/>
+            <Button Text="Login" Clicked="BtnLogin"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
