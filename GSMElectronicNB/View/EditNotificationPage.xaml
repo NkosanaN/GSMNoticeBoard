@@ -4,14 +4,23 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="Update"
              x:Class="GSMElectronicNB.View.EditNotificationPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back to List" IconImageSource="example_icon.png"
+                 Order="Primary"
+                 Priority="0"
+                 Clicked="Back2List"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="IdField"/>
             <Entry x:Name="MessageField"/>
 
             <Button Text="Update" Clicked="BtnUpdate"/>
-            <Button Text="Back to List" Clicked="Back2List"/>
+            <Button Text="Delete" Clicked="BtnDelete"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

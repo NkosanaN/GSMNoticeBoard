@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="Category"
              x:Class="GSMElectronicNB.View.CourseCategory">
     <ContentPage.Content>
         <StackLayout>
@@ -12,7 +13,19 @@
                 <Label Text="CSE"/>
                 <CheckBox CheckedChanged="OnCheckBoxCheckedChanged"  />
             </StackLayout>
-        
+
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Law"/>
+                <CheckBox CheckedChanged="OnCheckBoxCheckedChanged"  />
+            </StackLayout>
+
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="IT"/>
+                <CheckBox CheckedChanged="OnCheckBoxCheckedChanged"  />
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

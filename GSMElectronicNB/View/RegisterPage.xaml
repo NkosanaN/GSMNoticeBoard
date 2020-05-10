@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              mc:Ignorable="d"
+             Title="Registration"
              x:Class="GSMElectronicNB.View.RegisterPage">
     <ContentPage.Content>
         <StackLayout>

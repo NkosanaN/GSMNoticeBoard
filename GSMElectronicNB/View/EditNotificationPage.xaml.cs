@@ -43,5 +43,12 @@ namespace GSMElectronicNB.View
             db.Update(message);
             await Navigation.PopModalAsync();
         }
+
+        private async void BtnDelete(object sender, EventArgs e)
+        {
+            var db = new SQLiteConnection(dbPath);
+            db.Table<Message>().Delete(x => x.Id == Convert.ToInt32(IdField.Text));
+            await Navigation.PopModalAsync();
+        }
     }
 }
