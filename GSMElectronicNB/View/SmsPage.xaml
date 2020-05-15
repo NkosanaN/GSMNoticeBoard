@@ -8,9 +8,17 @@
              x:Class="GSMElectronicNB.View.SmsPage">
     <ContentPage.Content>
         <StackLayout>
-            <!--<Entry Text=""  Placeholder="Phone Number" x:Name="EntryNumber"/>-->
-            <Entry Text=""  Placeholder="Message" x:Name="EntryMessage"/>
-            <Button Text="Save/Sync Message" Clicked="BtnSendSms"/>
+
+            <Grid  Margin="20"  VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Entry Text=""  Placeholder="Message" x:Name="EntryMessage" Grid.Row="0"/>
+                <Button Text="Save/Sync Message" Clicked="BtnSendSms" Grid.Row="1"/>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

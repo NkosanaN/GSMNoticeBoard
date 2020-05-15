@@ -23,7 +23,7 @@ namespace GSMElectronicNB.View
 
             GetMessage();
         }
-
+        
         public void GetMessage() 
         {
             var db = new SQLiteConnection(dbPath);

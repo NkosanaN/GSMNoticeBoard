@@ -7,10 +7,27 @@
              Title="Login"
              x:Class="GSMElectronicNB.View.sLoginPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Entry Text=""  Placeholder="Name" x:Name="EntryName"/>
-            <Entry Text=""  Placeholder="Password" x:Name="EntryPassword"/>
-            <Button Text="Login" Clicked="BtnLogin"/>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Grid VerticalOptions="CenterAndExpand" Margin="20" RowSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <StackLayout>
+                        <Entry Text=""  Placeholder="Name" x:Name="EntryName" Grid.Row="0"/>
+                        <Entry Text=""  Placeholder="Password" x:Name="EntryPassword" Grid.Row="1" />
+                        <Button Text="Login" Clicked="BtnLogin" Grid.Row="2" BackgroundColor="Blue"/>
+                        <Button Text="SignUp" Clicked="BtnSignUp" Grid.Row="3"/>
+
+                    </StackLayout>
+
+
+                </Grid>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
