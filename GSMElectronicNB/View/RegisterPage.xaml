@@ -2,14 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
              mc:Ignorable="d"
              Title="Registration"
              x:Class="GSMElectronicNB.View.RegisterPage">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <!--<material:MaterialButton BackgroundColor="#EAEAEA" HorizontalOptions="Center" Text="Elevated Button" TextColor="Black" VerticalOptions="Center" />-->
+            <StackLayout Orientation="Vertical">
 
                 <Grid  Margin="20"  VerticalOptions="CenterAndExpand">
                     <Grid.RowDefinitions>
@@ -32,7 +31,7 @@
                     </StackLayout>
 
                     <StackLayout Grid.Row="3">
-                        <Button Text="Register" HorizontalOptions="CenterAndExpand" TextColor="White" WidthRequest="100" BackgroundColor="Blue" Clicked="BtnRegister"/>
+                        <material:MaterialButton  Clicked="BtnRegister"  ButtonType="Outlined" HorizontalOptions="Center" Text="Register" TextColor="Black" VerticalOptions="Center" />
                     </StackLayout>
 
 
