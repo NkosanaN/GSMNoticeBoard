@@ -21,29 +21,63 @@ namespace GSMElectronicNB.View
             InitializeComponent();
         }
 
+        bool checkInputs()
+        {
+            bool result = false;
+
+            if (!string.IsNullOrEmpty(password.Text) && !string.IsNullOrEmpty(username.Text) && !string.IsNullOrEmpty(email.Text))
+                result = true;
+
+
+            return result;
+        }
+
         async void BtnRegister(object sender, EventArgs e)
         {
-            var db = new SQLiteConnection(dbPath);
-            db.CreateTable<User>();
 
-            User user = new User()
+            if (checkInputs())
             {
-                Password = password.Text,
-                UserName = username.Text,
-                Email = email.Text
-            };
-            db.Insert(user);
-
-            Device.BeginInvokeOnMainThread(async () =>
-            {
-
-                var r = await DisplayAlert("Successfully ", "User Added", null, "Ok");
-
-                if(!r) 
+                var db = new SQLiteConnection(dbPath);
+                db.CreateTable<User>();
+                try
                 {
-                    App.Current.MainPage = new NavigationPage(new sLoginPage());
+
+                    User user = new User()
+                    {
+                        Password = password.Text,
+                        UserName = username.Text,
+                        Email = email.Text
+                    };
+                    db.Insert(user);
+
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+
+                        var r = await DisplayAlert("Successfully ", "User Added", null, "Ok");
+
+                        if (!r)
+                        {
+                            App.Current.MainPage = new NavigationPage(new sLoginPage());
+                        }
+                    });
                 }
-            });
+                catch (Exception ex)
+                {
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        await DisplayAlert("Failed", "Please verify Username or Password, Or Sign Up", null, "Ok");
+                    });
+
+                } 
+            }
+            else
+            {
+
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await DisplayAlert("Failed", " Either Username , Password or Email entry has not been entered ", null, "Ok");
+                });
+            }
 
         }
     }

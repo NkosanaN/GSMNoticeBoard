@@ -5,9 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms" xmlns:local="clr-namespace:GSMElectronicNB.Controls"
              mc:Ignorable="d"
              Title="Login"
-             BackgroundColor="White"
-             x:Class="GSMElectronicNB.View.sLoginPage">
-
+             BackgroundColor="Azure"
+             x:Class="GSMElectronicNB.View.sLoginPage"
+             >
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="primary">#3ec3d5</Color>
@@ -24,7 +25,7 @@
 
     <ContentPage.Content>
         <StackLayout  Orientation="Vertical">
-            <Label x:Name="lbl_Nointernet" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="White"/>
+            <!--<Label x:Name="lbl_Nointernet" HorizontalTextAlignment="Center" TextColor="White" BackgroundColor="White"/>-->
 
             <Grid  Grid.Row="0"  Margin="20,30,20,0">
 
@@ -42,9 +43,9 @@
                         <RowDefinition Height="100"/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
-                    <Image  Grid.Row="0" Source="userLogin.png" HeightRequest="100" VerticalOptions="EndAndExpand"/>
+                    <Image  Grid.Row="0" Source="Logo.png" HeightRequest="100" VerticalOptions="EndAndExpand"/>
 
-                    <Label Grid.Row="1" Text="Electronics Notice Board" TextColor="Black" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" FontSize="15"  HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="1" Text="Electronics Notice Board" TextColor="Black" VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center" FontSize="15"  HorizontalTextAlignment="Center"/>
 
                 </Grid>
 
@@ -58,13 +59,19 @@
                     </Grid.RowDefinitions>
 
                     <StackLayout  Grid.Row="0" FlexLayout.AlignSelf="Center">
-                        <Entry Text=""  Placeholder="Name" x:Name="EntryName"/>
+                        <local:ImageEntry TextColor="Black" 
+                                          x:Name="EntryName"
+                                          PlaceholderColor="Black"
+                                          Image="baseline_account_circle_black_18dp" 
+                                          Placeholder="Name"
+                                          HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
 
                     <StackLayout Grid.Row="1" FlexLayout.AlignSelf="Center">
-                        <local:ImageEntry TextColor="White" 
-                                          PlaceholderColor="{StaticResource primary}" 
-                                          Image="baseline_lock_black_18dp.png" 
+                        <local:ImageEntry TextColor="Black" 
+                                          x:Name="EntryPassword"
+                                          PlaceholderColor="Black"
+                                          Image="baseline_lock_black_18dp" 
                                           Placeholder="Password"
                                           IsPassword="True"
                                           HorizontalOptions="FillAndExpand"/>
@@ -78,10 +85,10 @@
                         <RowDefinition Height="40"/>
                     </Grid.RowDefinitions>
 
-                    <Button  Text="LOG IN" BackgroundColor="LightGray" TextColor="black" HeightRequest="50" VerticalOptions="Start" Grid.Row="0"/>
+                    <Button  Text="LOG IN" Clicked="BtnLogin"  BackgroundColor="LightGray" TextColor="black" HeightRequest="50" VerticalOptions="Start" Grid.Row="0"/>
 
                     <Button Text="FORGOT YOUR PASSWORD?" BackgroundColor="#17a2b8" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="1"/>
-                    <Button Text="Dont'Have Account ? SignUp"  BackgroundColor="#ffc107" TextColor="Black"  HeightRequest="50" VerticalOptions="Start" Grid.Row="2"/>
+                    <Button Text="Dont'Have Account ? SignUp" Clicked="BtnSignUp" BackgroundColor="#ffc107" TextColor="Black"  HeightRequest="50" VerticalOptions="Start" Grid.Row="2"/>
 
                 </Grid>
 

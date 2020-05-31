@@ -5,27 +5,54 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Title="Category"
+             BackgroundColor="Azure"
              x:Class="GSMElectronicNB.View.CourseCategory">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout  Orientation="Vertical">
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="CSE"/>
-                <CheckBox CheckedChanged="OnCheckBoxCheckedChanged"  />
-            </StackLayout>
+            <Grid  Margin="20,30,20,0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="1" Text="Select Course" TextColor="Black" VerticalOptions="FillAndExpand"  VerticalTextAlignment="Center" FontSize="15"  HorizontalTextAlignment="Center" Margin="0,0,0,0"/>
+
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Orientation="Horizontal" FlexLayout.AlignSelf="Center" Grid.Row="0">
+                        <Label Text="CSE" FontSize="Body" VerticalOptions="StartAndExpand" />
+                        <CheckBox CheckedChanged="OnCheckBoxCheckedChanged"  Margin="0,0,0,39" />
+                    </StackLayout>
 
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Law"/>
-                <CheckBox CheckedChanged="OnCheckBoxCheckedChanged"  />
-            </StackLayout>
+                    <StackLayout Orientation="Horizontal" FlexLayout.AlignSelf="Center" Grid.Row="1">
+                        <Label Text="Law" FontSize="Body"/>
+                        <CheckBox CheckedChanged="OnCheckBoxCheckedChanged"  Margin="0,0,0,39"/>
+                    </StackLayout>
 
 
-            <StackLayout Orientation="Horizontal">
-                <Label Text="IT"/>
-                <CheckBox CheckedChanged="OnCheckBoxCheckedChanged"  />
-            </StackLayout>
-
+                    <StackLayout Orientation="Horizontal" FlexLayout.AlignSelf="Center" Grid.Row="2">
+                        <Label Text="IT" FontSize="Body"/>
+                        <CheckBox CheckedChanged="OnCheckBoxCheckedChanged"  Margin="0,0,0,39" />
+                    </StackLayout>
+                </Grid>
+            </Grid>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

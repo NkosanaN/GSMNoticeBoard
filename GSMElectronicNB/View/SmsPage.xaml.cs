@@ -20,33 +20,64 @@ namespace GSMElectronicNB.View
         {
             InitializeComponent();
         }
+        bool checkInputs()
+        {
+            bool result = false;
 
+            if (!string.IsNullOrEmpty(EntryMessage.Text))
+                result = true;
+
+
+            return result;
+        }
         private async void BtnSendSms(object sender, EventArgs e)
         {
-            var db = new SQLiteConnection(dbPath);
-            db.CreateTable<Message>();
-
-            var maxPk = db.Table<Message>().OrderByDescending(c => c.Id).FirstOrDefault();
-
-            Message message = new Message()
+            if (checkInputs())
             {
-                Id = (maxPk == null ? 1 : maxPk.Id + 1),
-                Text = EntryMessage.Text
-            };
-            db.Insert(message);
-            //await DisplayAlert(null, message.Text, "Ok");
+                try
+                {
 
-            bool answer = await DisplayAlert("Question?", "Would you like to send sms", "Yes", "No");
+                    var db = new SQLiteConnection(dbPath);
+                    db.CreateTable<Message>();
 
-            if (answer) 
-            {
-                await Navigation.PushModalAsync(new NotificationPage());
+                    var maxPk = db.Table<Message>().OrderByDescending(c => c.Id).FirstOrDefault();
+
+                    Message message = new Message()
+                    {
+                        Id = (maxPk == null ? 1 : maxPk.Id + 1),
+                        Text = EntryMessage.Text
+                    };
+                    db.Insert(message);
+                    //await DisplayAlert(null, message.Text, "Ok");
+
+                    bool answer = await DisplayAlert("Question?", "Would you like to send sms", "Yes", "No");
+
+                    if (answer)
+                    {
+                        await Navigation.PushModalAsync(new NotificationPage());
+                    }
+                    else
+                    {
+                        await Navigation.PushModalAsync(new NotificationPage());
+                    }
+
+                }
+                catch (Exception)
+                {
+
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        await DisplayAlert("Failed", "Comment Area is empty", null, "Ok");
+                    });
+                }
             }
             else
             {
-                await Navigation.PushModalAsync(new NotificationPage());
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await DisplayAlert("Failed", " Comment Area is empty ", null, "Ok");
+                });
             }
-
         }
 
         public async void SendSms() 
