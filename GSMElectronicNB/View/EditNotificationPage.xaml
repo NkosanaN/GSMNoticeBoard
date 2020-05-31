@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
              mc:Ignorable="d"
              Title="Update"
              BackgroundColor="Azure"
@@ -16,12 +16,57 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Entry x:Name="IdField"/>
-            <Entry x:Name="MessageField"/>
+        <StackLayout Orientation="Vertical">
+            <Grid Margin="20,30,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="130"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-            <Button Text="Update" Clicked="BtnUpdate"/>
-            <Button Text="Delete" Clicked="BtnDelete"/>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="70"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout  Grid.Row="1" FlexLayout.AlignSelf="Center">
+                        <Entry x:Name="MessageField"/>
+                    </StackLayout>
+                </Grid>
+
+
+                <Grid Grid.Row="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Orientation="Horizontal">                    
+                        <material:MaterialButton  
+                            Clicked="BtnUpdate" 
+                            BackgroundColor="#17a2b8"   
+                            HeightRequest="50" 
+                            ButtonType="Outlined" 
+                            HorizontalOptions="Center" 
+                            Text="Update" 
+                            TextColor="Black"  
+                            ImageSource="baseline_cached_black_18dp"
+                            VerticalOptions="StartAndExpand" />
+
+                    <material:MaterialButton  Clicked="BtnDelete" 
+                                              BackgroundColor="#17a2b8"   
+                                              HeightRequest="50" 
+                                              ButtonType="Outlined" 
+                                              HorizontalOptions="Center" 
+                                              Text="Delete" 
+                                              TextColor="Black"  
+                                              ImageSource="baseline_delete_black_18dp"
+                                              VerticalOptions="StartAndExpand" />
+
+                    </StackLayout>
+
+                </Grid>
+
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
