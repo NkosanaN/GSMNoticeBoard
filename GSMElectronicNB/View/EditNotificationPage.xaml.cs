@@ -21,8 +21,6 @@ namespace GSMElectronicNB.View
         public EditNotificationPage(Message model)
         {
             InitializeComponent();
-
-
             MessageField.Text = model.Text;
             Id = model.Id;
         }

@@ -54,7 +54,7 @@ namespace GSMElectronicNB.View
 
                     if (answer)
                     {
-                        await Navigation.PushModalAsync(new NotificationPage());
+                        await SendSms(); //Navigation.PushModalAsync(new NotificationPage());
                     }
                     else
                     {
@@ -80,17 +80,17 @@ namespace GSMElectronicNB.View
             }
         }
 
-        public async void SendSms() 
+        public async Task SendSms() 
         {
-            //try
-            //{
-            //    await Sms.ComposeAsync(new SmsMessage(EntryMessage.Text, EntryNumber.Text));
-            //}
-            //catch (Exception)
-            //{
+            try
+            {
+                await Sms.ComposeAsync(new SmsMessage(EntryMessage.Text, "0659546597"));
+            }
+            catch (Exception)
+            {
 
-            //    throw;
-            //}
+                throw;
+            }
         } 
     }
 }

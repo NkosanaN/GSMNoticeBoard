@@ -87,8 +87,8 @@
 
                     <Button  Text="LOG IN" Clicked="BtnLogin"  BackgroundColor="LightGray" TextColor="black" HeightRequest="50" VerticalOptions="Start" Grid.Row="0"/>
 
-                    <Button Text="FORGOT YOUR PASSWORD?" BackgroundColor="#17a2b8" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="1"/>
-                    <Button Text="Dont'Have Account ? SignUp" Clicked="BtnSignUp" BackgroundColor="#ffc107" TextColor="Black"  HeightRequest="50" VerticalOptions="Start" Grid.Row="2"/>
+                    <!--<Button Text="FORGOT YOUR PASSWORD?" BackgroundColor="#17a2b8" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="1"/>-->
+                    <Button Text="Dont'Have Account ? SignUp" Clicked="BtnSignUp" BackgroundColor="#ffc107" TextColor="Black"  HeightRequest="50" VerticalOptions="Start" Grid.Row="1"/>
 
                 </Grid>
 

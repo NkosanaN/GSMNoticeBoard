@@ -25,16 +25,14 @@ namespace GSMElectronicNB.View
         {
             bool result = false;
 
-            if (!string.IsNullOrEmpty(password.Text) && !string.IsNullOrEmpty(username.Text) && !string.IsNullOrEmpty(email.Text))
+            if (!string.IsNullOrEmpty(password.Text) && !string.IsNullOrEmpty(username.Text))
                 result = true;
-
 
             return result;
         }
 
         async void BtnRegister(object sender, EventArgs e)
         {
-
             if (checkInputs())
             {
                 var db = new SQLiteConnection(dbPath);
@@ -46,7 +44,7 @@ namespace GSMElectronicNB.View
                     {
                         Password = password.Text,
                         UserName = username.Text,
-                        Email = email.Text
+                        //Email = email.Text
                     };
                     db.Insert(user);
 

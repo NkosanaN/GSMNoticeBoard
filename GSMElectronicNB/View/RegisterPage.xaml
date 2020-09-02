@@ -60,14 +60,14 @@
                                           HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
 
-                    <StackLayout Grid.Row="2" FlexLayout.AlignSelf="Center">
+                    <!--<StackLayout Grid.Row="2" FlexLayout.AlignSelf="Center">
                         <local:ImageEntry TextColor="Black" 
                                           x:Name="email"
                                           PlaceholderColor="Black"
                                           Image="baseline_email_black_18dp" 
                                           Placeholder="Email"
                                           HorizontalOptions="FillAndExpand"/>
-                    </StackLayout>
+                    </StackLayout>-->
                     
                 </Grid>
 
